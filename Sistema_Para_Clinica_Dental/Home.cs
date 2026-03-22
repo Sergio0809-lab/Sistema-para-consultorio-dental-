@@ -10,11 +10,29 @@ using System.Windows.Forms;
 
 namespace Sistema_Para_Clinica_Dental
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
+        }
+
+        private void dentistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dentista Doctor = new Dentista();
+            Doctor.ShowDialog();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pacientes pacientes = new Pacientes();
+            pacientes.ShowDialog();
+        }
+
+        private void citaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Citas cliente = new Citas();
+            cliente.ShowDialog();
         }
     }
 }

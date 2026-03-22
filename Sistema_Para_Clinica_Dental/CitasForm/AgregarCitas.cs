@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Sistema_Para_Clinica_Dental.CitasForm
 {
-    public partial class Agregar : Form
+    public partial class AgregarCitas : Form
     {
-        public Agregar()
+        public AgregarCitas()
         {
             InitializeComponent();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
