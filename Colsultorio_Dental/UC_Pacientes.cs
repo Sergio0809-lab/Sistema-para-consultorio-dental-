@@ -1,20 +1,26 @@
-﻿using System;
+﻿using Colsultorio_Dental.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Colsultorio_Dental
 {
+    
     public partial class UC_Pacientes : UserControl
     {
+        public ConsultorioDentalDBEntities _context;
         public UC_Pacientes()
         {
             InitializeComponent();
+            _context = new ConsultorioDentalDBEntities();
         }
 
 
@@ -51,6 +57,15 @@ namespace Colsultorio_Dental
             EstiloBoton(btnEliminar, Color.FromArgb(220, 53, 69));
             EstiloBoton(btnCargar, Color.FromArgb(108, 117, 125));
 
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            _context =  new ConsultorioDentalDBEntities();
+
+            var listaPacientes = _context.Pacientes.ToList();
+
+            dgvPacientes.DataSource = listaPacientes;
         }
     }
 }
