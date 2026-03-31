@@ -65,6 +65,8 @@ namespace Colsultorio_Dental
         private void Home_Load(object sender, EventArgs e)
         {
              EstilizarSidebar();
+            lblTitulo.Text = "Dashboard";
+            AbrirModulo(new UC_Dashboard());
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
