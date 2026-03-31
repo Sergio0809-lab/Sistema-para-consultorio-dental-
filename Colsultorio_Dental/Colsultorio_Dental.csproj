@@ -103,6 +103,18 @@
     <Compile Include="UC_Dashboard.Designer.cs">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Dentistas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Dentistas.Designer.cs">
+      <DependentUpon>UC_Dentistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Motivos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Motivos.Designer.cs">
+      <DependentUpon>UC_Motivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Pacientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     </Compile>
     <EmbeddedResource Include="UC_Dashboard.resx">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Dentistas.resx">
+      <DependentUpon>UC_Dentistas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Motivos.resx">
+      <DependentUpon>UC_Motivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Pacientes.resx">
       <DependentUpon>UC_Pacientes.cs</DependentUpon>

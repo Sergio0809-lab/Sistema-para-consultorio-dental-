@@ -99,6 +99,18 @@ namespace Colsultorio_Dental
             lblTitulo.Text = "Pacientes";
             AbrirModulo(new UC_Pacientes());
         }
+
+        private void btnDentistas_Click(object sender, EventArgs e)
+        {
+            lblTitulo.Text = "Dentistas";
+            AbrirModulo(new UC_Dentistas());
+        }
+
+        private void btnMotivos_Click(object sender, EventArgs e)
+        {
+            lblTitulo.Text = "Motivos";
+            AbrirModulo(new UC_Motivos());
+        }
     }
 
 
