@@ -62,6 +62,54 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actualizar\ActualizarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actualizar\ActualizarCitas.Designer.cs">
+      <DependentUpon>ActualizarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actualizar\ActualizarDentistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actualizar\ActualizarDentistas.Designer.cs">
+      <DependentUpon>ActualizarDentistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actualizar\ActualizarMotivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actualizar\ActualizarMotivos.Designer.cs">
+      <DependentUpon>ActualizarMotivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actualizar\ActualizarPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actualizar\ActualizarPacientes.Designer.cs">
+      <DependentUpon>ActualizarPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\AgregarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\AgregarCitas.Designer.cs">
+      <DependentUpon>AgregarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\AgregarDentistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\AgregarDentistas.Designer.cs">
+      <DependentUpon>AgregarDentistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\AgregarMotivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\AgregarMotivos.Designer.cs">
+      <DependentUpon>AgregarMotivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\AgregarPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\AgregarPacientes.Designer.cs">
+      <DependentUpon>AgregarPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datos\Cita.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -88,6 +136,30 @@
     </Compile>
     <Compile Include="Datos\Paciente.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\EliminarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\EliminarCitas.Designer.cs">
+      <DependentUpon>EliminarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\EliminarDentistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\EliminarDentistas.Designer.cs">
+      <DependentUpon>EliminarDentistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\EliminarMotivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\EliminarMotivos.Designer.cs">
+      <DependentUpon>EliminarMotivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar\EliminarPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar\EliminarPacientes.Designer.cs">
+      <DependentUpon>EliminarPacientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -190,6 +262,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
