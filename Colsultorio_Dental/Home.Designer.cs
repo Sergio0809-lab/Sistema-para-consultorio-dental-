@@ -96,6 +96,7 @@
             this.btnCitas.TabIndex = 4;
             this.btnCitas.Text = "Citas";
             this.btnCitas.UseVisualStyleBackColor = true;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // btnMotivos
             // 

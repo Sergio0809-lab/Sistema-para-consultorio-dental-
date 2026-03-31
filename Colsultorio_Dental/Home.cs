@@ -111,6 +111,12 @@ namespace Colsultorio_Dental
             lblTitulo.Text = "Motivos";
             AbrirModulo(new UC_Motivos());
         }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            lblTitulo.Text = "Citas";
+            AbrirModulo(new UC_Citas());
+        }
     }
 
 

@@ -34,6 +34,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
+            this.btnExportarCSV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDentistas)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +52,9 @@
             // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.btnExportarPDF);
             this.pnlTop.Controls.Add(this.btnCargar);
+            this.pnlTop.Controls.Add(this.btnExportarCSV);
             this.pnlTop.Controls.Add(this.btnEliminar);
             this.pnlTop.Controls.Add(this.btnActualizar);
             this.pnlTop.Controls.Add(this.btnAgregar);
@@ -97,6 +101,24 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.Location = new System.Drawing.Point(512, 19);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarPDF.TabIndex = 7;
+            this.btnExportarPDF.Text = "Exportar PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = true;
+            // 
+            // btnExportarCSV
+            // 
+            this.btnExportarCSV.Location = new System.Drawing.Point(402, 19);
+            this.btnExportarCSV.Name = "btnExportarCSV";
+            this.btnExportarCSV.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarCSV.TabIndex = 6;
+            this.btnExportarCSV.Text = "ExportarCSV";
+            this.btnExportarCSV.UseVisualStyleBackColor = true;
+            // 
             // UC_Dentistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -120,5 +142,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnExportarPDF;
+        private System.Windows.Forms.Button btnExportarCSV;
     }
 }

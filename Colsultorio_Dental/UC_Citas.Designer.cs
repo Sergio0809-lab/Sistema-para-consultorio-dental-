@@ -1,6 +1,6 @@
 ﻿namespace Colsultorio_Dental
 {
-    partial class UC_Pacientes
+    partial class UC_Citas
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,32 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnCargar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dgvPacientes = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnExportarPDF = new System.Windows.Forms.Button();
             this.btnExportarCSV = new System.Windows.Forms.Button();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvCitas
+            // 
+            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.Location = new System.Drawing.Point(333, 370);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.RowHeadersWidth = 51;
+            this.dgvCitas.RowTemplate.Height = 24;
+            this.dgvCitas.Size = new System.Drawing.Size(307, 150);
+            this.dgvCitas.TabIndex = 3;
             // 
             // pnlTop
             // 
             this.pnlTop.Controls.Add(this.btnExportarPDF);
-            this.pnlTop.Controls.Add(this.btnCargar);
             this.pnlTop.Controls.Add(this.btnExportarCSV);
+            this.pnlTop.Controls.Add(this.btnCargar);
             this.pnlTop.Controls.Add(this.btnEliminar);
             this.pnlTop.Controls.Add(this.btnActualizar);
             this.pnlTop.Controls.Add(this.btnAgregar);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(690, 60);
-            this.pnlTop.TabIndex = 0;
+            this.pnlTop.Size = new System.Drawing.Size(1494, 60);
+            this.pnlTop.TabIndex = 2;
             // 
             // btnCargar
             // 
@@ -92,59 +101,47 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // dgvPacientes
-            // 
-            this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientes.Location = new System.Drawing.Point(333, 174);
-            this.dgvPacientes.Name = "dgvPacientes";
-            this.dgvPacientes.RowHeadersWidth = 51;
-            this.dgvPacientes.RowTemplate.Height = 24;
-            this.dgvPacientes.Size = new System.Drawing.Size(307, 150);
-            this.dgvPacientes.TabIndex = 1;
-            this.dgvPacientes.DockChanged += new System.EventHandler(this.UC_Pacientes_Load);
-            // 
-            // btnExportarPDF
-            // 
-            this.btnExportarPDF.Location = new System.Drawing.Point(511, 19);
-            this.btnExportarPDF.Name = "btnExportarPDF";
-            this.btnExportarPDF.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarPDF.TabIndex = 7;
-            this.btnExportarPDF.Text = "Exportar PDF";
-            this.btnExportarPDF.UseVisualStyleBackColor = true;
-            // 
             // btnExportarCSV
             // 
-            this.btnExportarCSV.Location = new System.Drawing.Point(401, 19);
+            this.btnExportarCSV.Location = new System.Drawing.Point(420, 19);
             this.btnExportarCSV.Name = "btnExportarCSV";
             this.btnExportarCSV.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarCSV.TabIndex = 6;
+            this.btnExportarCSV.TabIndex = 4;
             this.btnExportarCSV.Text = "ExportarCSV";
             this.btnExportarCSV.UseVisualStyleBackColor = true;
             // 
-            // UC_Pacientes
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.Location = new System.Drawing.Point(530, 19);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarPDF.TabIndex = 5;
+            this.btnExportarPDF.Text = "Exportar PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = true;
+            // 
+            // UC_Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgvPacientes);
+            this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.pnlTop);
-            this.Name = "UC_Pacientes";
-            this.Size = new System.Drawing.Size(690, 497);
-            this.Load += new System.EventHandler(this.UC_Pacientes_Load);
+            this.Name = "UC_Citas";
+            this.Size = new System.Drawing.Size(1494, 717);
+            this.Load += new System.EventHandler(this.UC_Citas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.pnlTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.DataGridView dgvPacientes;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnExportarPDF;
         private System.Windows.Forms.Button btnExportarCSV;
     }

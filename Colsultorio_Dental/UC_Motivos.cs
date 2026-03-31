@@ -39,6 +39,8 @@ namespace Colsultorio_Dental
             EstiloBoton(btnActualizar, Color.FromArgb(0, 123, 255));
             EstiloBoton(btnEliminar, Color.FromArgb(220, 53, 69));
             EstiloBoton(btnCargar, Color.FromArgb(108, 117, 125));
+            EstiloBoton(btnExportarCSV, Color.FromArgb(25, 135, 84));
+            EstiloBoton(btnExportarPDF, Color.FromArgb(192, 57, 43));
         }
 
         private void EstiloBoton(Button btn, Color color)
