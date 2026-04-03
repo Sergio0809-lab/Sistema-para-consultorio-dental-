@@ -199,6 +199,9 @@
     <Compile Include="UC_Pacientes.Designer.cs">
       <DependentUpon>UC_Pacientes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Actualizar\ActualizarMotivos.resx">
+      <DependentUpon>ActualizarMotivos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,6 @@
-﻿using Colsultorio_Dental.Datos;
+﻿using Colsultorio_Dental.Actualizar;
+using Colsultorio_Dental.Agregar;
+using Colsultorio_Dental.Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,6 +43,13 @@ namespace Colsultorio_Dental
             EstiloBoton(btnCargar, Color.FromArgb(108, 117, 125));
             EstiloBoton(btnExportarCSV, Color.FromArgb(25, 135, 84));
             EstiloBoton(btnExportarPDF, Color.FromArgb(192, 57, 43));
+
+
+            _context = new ConsultorioDentalDBEntities();
+
+            var listaMotivos = _context.Motivos.ToList();
+
+            dgvDentistas.DataSource = listaMotivos;
         }
 
         private void EstiloBoton(Button btn, Color color)
@@ -60,6 +69,12 @@ namespace Colsultorio_Dental
             var listaMotivos = _context.Motivos.ToList();
 
             dgvDentistas.DataSource = listaMotivos;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ActualizarMotivos Agregar = new ActualizarMotivos();
+            Agregar.ShowDialog();
         }
     }
 }
