@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.btnExportarCSV = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnExportarPDF = new System.Windows.Forms.Button();
-            this.btnExportarCSV = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,15 @@
             this.pnlTop.Size = new System.Drawing.Size(690, 60);
             this.pnlTop.TabIndex = 0;
             // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.Location = new System.Drawing.Point(511, 19);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarPDF.TabIndex = 7;
+            this.btnExportarPDF.Text = "Exportar PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = true;
+            // 
             // btnCargar
             // 
             this.btnCargar.Location = new System.Drawing.Point(110, 19);
@@ -65,6 +74,15 @@
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
+            // btnExportarCSV
+            // 
+            this.btnExportarCSV.Location = new System.Drawing.Point(401, 19);
+            this.btnExportarCSV.Name = "btnExportarCSV";
+            this.btnExportarCSV.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarCSV.TabIndex = 6;
+            this.btnExportarCSV.Text = "ExportarCSV";
+            this.btnExportarCSV.UseVisualStyleBackColor = true;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(304, 19);
@@ -73,6 +91,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -82,6 +101,7 @@
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
@@ -91,6 +111,7 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvPacientes
             // 
@@ -102,24 +123,6 @@
             this.dgvPacientes.Size = new System.Drawing.Size(307, 150);
             this.dgvPacientes.TabIndex = 1;
             this.dgvPacientes.DockChanged += new System.EventHandler(this.UC_Pacientes_Load);
-            // 
-            // btnExportarPDF
-            // 
-            this.btnExportarPDF.Location = new System.Drawing.Point(511, 19);
-            this.btnExportarPDF.Name = "btnExportarPDF";
-            this.btnExportarPDF.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarPDF.TabIndex = 7;
-            this.btnExportarPDF.Text = "Exportar PDF";
-            this.btnExportarPDF.UseVisualStyleBackColor = true;
-            // 
-            // btnExportarCSV
-            // 
-            this.btnExportarCSV.Location = new System.Drawing.Point(401, 19);
-            this.btnExportarCSV.Name = "btnExportarCSV";
-            this.btnExportarCSV.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarCSV.TabIndex = 6;
-            this.btnExportarCSV.Text = "ExportarCSV";
-            this.btnExportarCSV.UseVisualStyleBackColor = true;
             // 
             // UC_Pacientes
             // 

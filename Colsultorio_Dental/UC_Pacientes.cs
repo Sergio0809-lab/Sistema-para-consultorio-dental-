@@ -1,4 +1,7 @@
-﻿using Colsultorio_Dental.Datos;
+﻿using Colsultorio_Dental.Actualizar;
+using Colsultorio_Dental.Agregar;
+using Colsultorio_Dental.Datos;
+using Colsultorio_Dental.Eliminar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,16 +61,46 @@ namespace Colsultorio_Dental
             EstiloBoton(btnCargar, Color.FromArgb(108, 117, 125));
             EstiloBoton(btnExportarCSV, Color.FromArgb(25, 135, 84));
             EstiloBoton(btnExportarPDF, Color.FromArgb(192, 57, 43));
+            CargarPacientes();
 
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            _context =  new ConsultorioDentalDBEntities();
+            CargarPacientes();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ActualizarPacientes Actualizar = new ActualizarPacientes();
+            Actualizar.StartPosition = FormStartPosition.CenterScreen;
+            Actualizar.ShowDialog();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarPacientes Actualizar = new AgregarPacientes();
+            Actualizar.StartPosition = FormStartPosition.CenterScreen;
+            Actualizar.ShowDialog();
+
+        }
+
+        public void CargarPacientes()
+        {
+            _context = new ConsultorioDentalDBEntities();
 
             var listaPacientes = _context.Pacientes.ToList();
 
             dgvPacientes.DataSource = listaPacientes;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+
+            EliminarPacientes eliminar = new EliminarPacientes();
+            eliminar.StartPosition = FormStartPosition.CenterScreen;
+            eliminar.ShowDialog();
         }
     }
 }

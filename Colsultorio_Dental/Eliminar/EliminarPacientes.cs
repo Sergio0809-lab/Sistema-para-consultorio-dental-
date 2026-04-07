@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Colsultorio_Dental.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,37 @@ namespace Colsultorio_Dental.Eliminar
 {
     public partial class EliminarPacientes : Form
     {
+        public ConsultorioDentalDBEntities _context;
         public EliminarPacientes()
         {
             InitializeComponent();
+
+            _context = new ConsultorioDentalDBEntities();
+        }
+
+        private void btnActualizarMotivos_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("Debe introducir un ID válido.");
+                return;
+            }
+
+            int clienid = Convert.ToInt32(textBox2.Text);
+
+            Paciente clien = _context.Pacientes.FirstOrDefault(q => q.PacienteID.Equals(clienid));
+            if (clien == null)
+            {
+                MessageBox.Show("EL paciente no existe.");
+                return;
+            }
+
+            _context.Pacientes.Remove(clien);
+            int rowsAffected = _context.SaveChanges();
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Se ha eliminado el paciente en la base de datos.");
+            }
         }
     }
 }

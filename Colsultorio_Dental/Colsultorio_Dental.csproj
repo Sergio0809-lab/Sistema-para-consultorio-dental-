@@ -205,14 +205,32 @@
     <Compile Include="UC_Pacientes.Designer.cs">
       <DependentUpon>UC_Pacientes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Actualizar\ActualizarDentistas.resx">
+      <DependentUpon>ActualizarDentistas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Actualizar\ActualizarMotivos.resx">
       <DependentUpon>ActualizarMotivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actualizar\ActualizarPacientes.resx">
+      <DependentUpon>ActualizarPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\AgregarDentistas.resx">
+      <DependentUpon>AgregarDentistas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar\AgregarMotivos.resx">
       <DependentUpon>AgregarMotivos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\AgregarPacientes.resx">
+      <DependentUpon>AgregarPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar\EliminarDentistas.resx">
+      <DependentUpon>EliminarDentistas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Eliminar\EliminarMotivos.resx">
       <DependentUpon>EliminarMotivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar\EliminarPacientes.resx">
+      <DependentUpon>EliminarPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

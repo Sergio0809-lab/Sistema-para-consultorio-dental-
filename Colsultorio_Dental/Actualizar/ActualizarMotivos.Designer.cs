@@ -90,7 +90,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(71, 61);
+            this.groupBox1.Location = new System.Drawing.Point(35, 36);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(450, 236);
             this.groupBox1.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 327);
+            this.ClientSize = new System.Drawing.Size(530, 302);
             this.Controls.Add(this.groupBox1);
             this.Name = "ActualizarMotivos";
             this.Text = "ActualizarMotivos";
