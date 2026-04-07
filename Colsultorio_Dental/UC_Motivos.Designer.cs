@@ -68,10 +68,11 @@
             // 
             this.btnExportarPDF.Location = new System.Drawing.Point(507, 19);
             this.btnExportarPDF.Name = "btnExportarPDF";
-            this.btnExportarPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarPDF.Size = new System.Drawing.Size(98, 23);
             this.btnExportarPDF.TabIndex = 7;
             this.btnExportarPDF.Text = "Exportar PDF";
             this.btnExportarPDF.UseVisualStyleBackColor = true;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
             // 
             // btnCargar
             // 
@@ -87,7 +88,7 @@
             // 
             this.btnExportarCSV.Location = new System.Drawing.Point(397, 19);
             this.btnExportarCSV.Name = "btnExportarCSV";
-            this.btnExportarCSV.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarCSV.Size = new System.Drawing.Size(104, 23);
             this.btnExportarCSV.TabIndex = 6;
             this.btnExportarCSV.Text = "ExportarCSV";
             this.btnExportarCSV.UseVisualStyleBackColor = true;
@@ -100,6 +101,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 

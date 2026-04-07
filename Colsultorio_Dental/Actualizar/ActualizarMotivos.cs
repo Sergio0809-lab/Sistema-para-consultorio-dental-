@@ -46,7 +46,7 @@ namespace Colsultorio_Dental.Actualizar
             Motivo motivo  = _context.Motivos.FirstOrDefault(q => q.MotivoID.Equals(motivoid));
             if (motivo == null)
             {
-                MessageBox.Show("Cliente no existe.");
+                MessageBox.Show("El motivo no  existe.");
                 return;
             }
 
@@ -59,7 +59,7 @@ namespace Colsultorio_Dental.Actualizar
             int rowsAffected = _context.SaveChanges();
             if (rowsAffected > 0)
             {
-                MessageBox.Show("Se ha actualizado el cliente en la base de datos.");
+                MessageBox.Show("Se ha actualizado el motivo en la base de datos.");
             }
         }
 
