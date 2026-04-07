@@ -27,22 +27,55 @@ namespace Colsultorio_Dental.Actualizar
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hhh00h");
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("El ID está incorrecto o vacio.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("La descripcion está incorrecta o vacia.");
+                return;
+            }
+
+
+
+            int motivoid = Convert.ToInt32(textBox1.Text);
+
+            Motivo motivo  = _context.Motivos.FirstOrDefault(q => q.MotivoID.Equals(motivoid));
+            if (motivo == null)
+            {
+                MessageBox.Show("Cliente no existe.");
+                return;
+            }
+
+
+           
+            motivo.Descripcion = textBox2.Text;
+           
+
+
+            int rowsAffected = _context.SaveChanges();
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Se ha actualizado el cliente en la base de datos.");
+            }
         }
 
         private void ActualizarMotivos_Load(object sender, EventArgs e)
         {
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
+            //dataGridView1.Dock = DockStyle.Fill;
+            //dataGridView1.BackgroundColor = Color.White;
+            //dataGridView1.BorderStyle = BorderStyle.None;
 
-            dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+            //dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
+            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
 
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 102, 153);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            //dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 102, 153);
+            //dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
-            dataGridView1.EnableHeadersVisualStyles = false;
+            //dataGridView1.EnableHeadersVisualStyles = false;
 
 
             
@@ -52,7 +85,7 @@ namespace Colsultorio_Dental.Actualizar
 
             var listaMotivos = _context.Motivos.ToList();
 
-            dataGridView1.DataSource = listaMotivos;
+            //dataGridView1.DataSource = listaMotivos;
 
 
         }

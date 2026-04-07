@@ -30,12 +30,12 @@
         {
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
+            this.btnExportarCSV = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnExportarCSV = new System.Windows.Forms.Button();
-            this.btnExportarPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -61,8 +61,26 @@
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1494, 60);
+            this.pnlTop.Size = new System.Drawing.Size(1857, 60);
             this.pnlTop.TabIndex = 2;
+            // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.Location = new System.Drawing.Point(530, 19);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarPDF.TabIndex = 5;
+            this.btnExportarPDF.Text = "Exportar PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = true;
+            // 
+            // btnExportarCSV
+            // 
+            this.btnExportarCSV.Location = new System.Drawing.Point(420, 19);
+            this.btnExportarCSV.Name = "btnExportarCSV";
+            this.btnExportarCSV.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarCSV.TabIndex = 4;
+            this.btnExportarCSV.Text = "ExportarCSV";
+            this.btnExportarCSV.UseVisualStyleBackColor = true;
             // 
             // btnCargar
             // 
@@ -101,32 +119,15 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // btnExportarCSV
-            // 
-            this.btnExportarCSV.Location = new System.Drawing.Point(420, 19);
-            this.btnExportarCSV.Name = "btnExportarCSV";
-            this.btnExportarCSV.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarCSV.TabIndex = 4;
-            this.btnExportarCSV.Text = "ExportarCSV";
-            this.btnExportarCSV.UseVisualStyleBackColor = true;
-            // 
-            // btnExportarPDF
-            // 
-            this.btnExportarPDF.Location = new System.Drawing.Point(530, 19);
-            this.btnExportarPDF.Name = "btnExportarPDF";
-            this.btnExportarPDF.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarPDF.TabIndex = 5;
-            this.btnExportarPDF.Text = "Exportar PDF";
-            this.btnExportarPDF.UseVisualStyleBackColor = true;
-            // 
             // UC_Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.pnlTop);
             this.Name = "UC_Citas";
-            this.Size = new System.Drawing.Size(1494, 717);
+            this.Size = new System.Drawing.Size(1857, 717);
             this.Load += new System.EventHandler(this.UC_Citas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.pnlTop.ResumeLayout(false);

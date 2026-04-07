@@ -115,7 +115,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(220, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(917, 61);
+            this.pnlHeader.Size = new System.Drawing.Size(1217, 61);
             this.pnlHeader.TabIndex = 1;
             // 
             // lblTitulo
@@ -135,7 +135,7 @@
             this.plnMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.plnMenu.Location = new System.Drawing.Point(0, 0);
             this.plnMenu.Name = "plnMenu";
-            this.plnMenu.Size = new System.Drawing.Size(917, 0);
+            this.plnMenu.Size = new System.Drawing.Size(1217, 0);
             this.plnMenu.TabIndex = 5;
             // 
             // pnlContenedor
@@ -143,14 +143,14 @@
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(220, 61);
             this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(917, 536);
+            this.pnlContenedor.Size = new System.Drawing.Size(1217, 536);
             this.pnlContenedor.TabIndex = 2;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 597);
+            this.ClientSize = new System.Drawing.Size(1437, 597);
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlSlidebar);

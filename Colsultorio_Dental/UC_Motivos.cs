@@ -74,6 +74,14 @@ namespace Colsultorio_Dental
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             ActualizarMotivos Agregar = new ActualizarMotivos();
+            Agregar.StartPosition = FormStartPosition.CenterScreen;
+            Agregar.ShowDialog();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarMotivos Agregar = new AgregarMotivos();
+            Agregar.StartPosition = FormStartPosition.CenterScreen;
             Agregar.ShowDialog();
         }
     }

@@ -202,6 +202,9 @@
     <EmbeddedResource Include="Actualizar\ActualizarMotivos.resx">
       <DependentUpon>ActualizarMotivos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\AgregarMotivos.resx">
+      <DependentUpon>AgregarMotivos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
