@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,6 +75,106 @@ namespace Colsultorio_Dental.Agregar
         private void AgregarCitas_Load(object sender, EventArgs e)
         {
             cargarCmbCategorias();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un paciente");
+                return;
+            }
+
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un dentista");
+                return;
+            }
+
+            if (comboBox3.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un motivo");
+                return;
+            }
+
+            if (comboBox4.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione la duración");
+                return;
+            }
+
+            using (var db = new ConsultorioDentalDBEntities())
+            {
+                DateTime fecha = dtpFecha.Value.Date;
+                TimeSpan hora = dtpHora.Value.TimeOfDay;
+                int duracion = int.Parse(cmbDuracion.Text);
+
+                DateTime inicioNueva = fecha.Add(hora);
+                DateTime finNueva = inicioNueva.AddMinutes(duracion);
+
+                int dentistaId = (int)cmbDentista.SelectedValue;
+
+                bool existe = db.Citas.Any(c =>
+                    c.DentistaID == dentistaId &&
+                    DbFunctions.TruncateTime(c.Fecha) == fecha &&
+                    (
+                        inicioNueva < DbFunctions.AddMinutes(
+                            DbFunctions.CreateDateTime(
+                                c.Fecha.Year,
+                                c.Fecha.Month,
+                                c.Fecha.Day,
+                                c.Hora.Hours,
+                                c.Hora.Minutes,
+                                c.Hora.Seconds
+                            ), c.Duracion)
+                        &&
+                        finNueva > DbFunctions.CreateDateTime(
+                            c.Fecha.Year,
+                            c.Fecha.Month,
+                            c.Fecha.Day,
+                            c.Hora.Hours,
+                            c.Hora.Minutes,
+                            c.Hora.Seconds
+                        )
+                    )
+                );
+
+                if (existe)
+                {
+                    MessageBox.Show("El dentista ya tiene una cita en ese horario ❌");
+                    return;
+                }
+
+                
+                Citas nueva = new Citas()
+                {
+                    PacienteID = (int)cmbPaciente.SelectedValue,
+                    DentistaID = dentistaId,
+                    MotivoID = (int)cmbMotivo.SelectedValue,
+                    Fecha = fecha,
+                    Hora = hora,
+                    Duracion = duracion,
+                    FechaCreacion = DateTime.Now
+                };
+
+                db.Citas.Add(nueva);
+                db.SaveChanges();
+            }
+
+            MessageBox.Show("Cita guardada correctamente ✅");
+
+            // 🔄 LIMPIAR FORM
+            cmbPaciente.SelectedIndex = -1;
+            cmbDentista.SelectedIndex = -1;
+            cmbMotivo.SelectedIndex = -1;
+            cmbDuracion.SelectedIndex = -1;
+
+
+
+
+
         }
     }
 }
