@@ -214,6 +214,9 @@
     <EmbeddedResource Include="Actualizar\ActualizarPacientes.resx">
       <DependentUpon>ActualizarPacientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\AgregarCitas.resx">
+      <DependentUpon>AgregarCitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Agregar\AgregarDentistas.resx">
       <DependentUpon>AgregarDentistas.cs</DependentUpon>
     </EmbeddedResource>

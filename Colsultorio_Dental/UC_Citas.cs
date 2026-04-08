@@ -1,4 +1,6 @@
-﻿using Colsultorio_Dental.Datos;
+﻿using Colsultorio_Dental.Agregar;
+using Colsultorio_Dental.Datos;
+using Colsultorio_Dental.Eliminar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -132,25 +134,14 @@ namespace Colsultorio_Dental
             }
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarCitas agregar = new AgregarCitas();
+            agregar.StartPosition = FormStartPosition.CenterScreen;
+            agregar.ShowDialog();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
     }
     
 }
