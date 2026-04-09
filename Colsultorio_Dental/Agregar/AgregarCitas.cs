@@ -107,14 +107,14 @@ namespace Colsultorio_Dental.Agregar
 
             using (var db = new ConsultorioDentalDBEntities())
             {
-                DateTime fecha = dtpFecha.Value.Date;
-                TimeSpan hora = dtpHora.Value.TimeOfDay;
-                int duracion = int.Parse(cmbDuracion.Text);
+                DateTime fecha = dateTimePicker1.Value.Date;
+                TimeSpan hora = dateTimePicker2.Value.TimeOfDay;
+                int duracion = int.Parse(comboBox4.Text);
 
                 DateTime inicioNueva = fecha.Add(hora);
                 DateTime finNueva = inicioNueva.AddMinutes(duracion);
 
-                int dentistaId = (int)cmbDentista.SelectedValue;
+                int dentistaId = (int)comboBox2.SelectedValue;
 
                 bool existe = db.Citas.Any(c =>
                     c.DentistaID == dentistaId &&
@@ -148,11 +148,11 @@ namespace Colsultorio_Dental.Agregar
                 }
 
                 
-                Citas nueva = new Citas()
+                Cita nueva = new Cita()
                 {
-                    PacienteID = (int)cmbPaciente.SelectedValue,
+                    PacienteID = (int)comboBox1.SelectedValue,
                     DentistaID = dentistaId,
-                    MotivoID = (int)cmbMotivo.SelectedValue,
+                    MotivoID = (int)comboBox3.SelectedValue,
                     Fecha = fecha,
                     Hora = hora,
                     Duracion = duracion,
@@ -163,13 +163,13 @@ namespace Colsultorio_Dental.Agregar
                 db.SaveChanges();
             }
 
-            MessageBox.Show("Cita guardada correctamente ✅");
+            MessageBox.Show("Cita guardada correctamente ");
 
-            // 🔄 LIMPIAR FORM
-            cmbPaciente.SelectedIndex = -1;
-            cmbDentista.SelectedIndex = -1;
-            cmbMotivo.SelectedIndex = -1;
-            cmbDuracion.SelectedIndex = -1;
+            
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
+            comboBox4.SelectedIndex = -1;
 
 
 
