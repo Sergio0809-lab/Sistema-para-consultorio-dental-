@@ -2,11 +2,14 @@
 using Colsultorio_Dental.Agregar;
 using Colsultorio_Dental.Datos;
 using Colsultorio_Dental.Eliminar;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,8 +92,17 @@ namespace Colsultorio_Dental
         {
             _context = new ConsultorioDentalDBEntities();
 
-            var listaDentistas = _context.Dentistas.ToList();
+            var listaDentistas = _context.Dentistas
+                .Select(d => new
+                {
+                    d.DentistaID,
+                    d.NombreCompleto,
+                    d.Especialidad,
+                    d.Telefono
+                })
+                .ToList();
 
+            dgvDentistas.DataSource = null; 
             dgvDentistas.DataSource = listaDentistas;
         }
 
@@ -108,6 +120,118 @@ namespace Colsultorio_Dental
             EliminarDentistas eli= new EliminarDentistas();
             eli.StartPosition = FormStartPosition.CenterScreen;
             eli.ShowDialog();
+        }
+
+
+        private void ExportarPDF(DataGridView dgv)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Dentistas.pdf";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                Document doc = new Document(PageSize.A4, 10f, 10f, 20f, 20f);
+                PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+
+                doc.Open();
+
+                Paragraph titulo = new Paragraph("Dentistas\n\n",
+                    FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD));
+                titulo.Alignment = Element.ALIGN_CENTER;
+                doc.Add(titulo);
+
+
+                PdfPTable tabla = new PdfPTable(dgv.Columns.Count);
+                tabla.WidthPercentage = 100;
+
+
+                foreach (DataGridViewColumn col in dgv.Columns)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(col.HeaderText));
+                    cell.BackgroundColor = new BaseColor(0, 102, 153);
+                    cell.Phrase.Font.Color = BaseColor.WHITE;
+                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    tabla.AddCell(cell);
+                }
+
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            string texto = cell.Value?.ToString() ?? "";
+                            tabla.AddCell(new Phrase(texto));
+                        }
+                    }
+                }
+
+                doc.Add(tabla);
+                doc.Close();
+
+                MessageBox.Show("PDF exportado correctamente ");
+            }
+
+
+
+        }
+
+
+        private void ExportarCSV(DataGridView dgv)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "CSV (*.csv)|*.csv";
+            sfd.FileName = "Dentistas.csv";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+                {
+
+                    for (int i = 0; i < dgv.Columns.Count; i++)
+                    {
+                        sw.Write($"\"{dgv.Columns[i].HeaderText}\"");
+                        if (i < dgv.Columns.Count - 1)
+                            sw.Write(",");
+                    }
+                    sw.WriteLine();
+
+
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            for (int i = 0; i < dgv.Columns.Count; i++)
+                            {
+                                string valor = row.Cells[i].Value?.ToString() ?? "";
+
+
+                                valor = valor.Replace("\"", "\"\"");
+
+                                sw.Write($"\"{valor}\"");
+
+                                if (i < dgv.Columns.Count - 1)
+                                    sw.Write(",");
+                            }
+                            sw.WriteLine();
+                        }
+                    }
+                }
+
+                MessageBox.Show("CSV exportado correctamente ");
+            }
+        }
+
+        private void btnExportarCSV_Click(object sender, EventArgs e)
+        {
+            ExportarCSV(dgvDentistas);
+        }
+
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            ExportarPDF(dgvDentistas);
         }
     }
 }

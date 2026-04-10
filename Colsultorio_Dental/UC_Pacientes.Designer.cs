@@ -63,6 +63,7 @@
             this.btnExportarPDF.TabIndex = 7;
             this.btnExportarPDF.Text = "Exportar PDF";
             this.btnExportarPDF.UseVisualStyleBackColor = true;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
             // 
             // btnCargar
             // 
@@ -82,6 +83,7 @@
             this.btnExportarCSV.TabIndex = 6;
             this.btnExportarCSV.Text = "ExportarCSV";
             this.btnExportarCSV.UseVisualStyleBackColor = true;
+            this.btnExportarCSV.Click += new System.EventHandler(this.btnExportarCSV_Click);
             // 
             // btnEliminar
             // 
