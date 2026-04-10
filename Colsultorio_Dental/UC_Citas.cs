@@ -1,4 +1,5 @@
-﻿using Colsultorio_Dental.Agregar;
+﻿using Colsultorio_Dental.Actualizar;
+using Colsultorio_Dental.Agregar;
 using Colsultorio_Dental.Datos;
 using Colsultorio_Dental.Eliminar;
 using System;
@@ -67,9 +68,9 @@ namespace Colsultorio_Dental
             EstiloBoton(btnEliminar, Color.FromArgb(220, 53, 69));
             EstiloBoton(btnCargar, Color.FromArgb(108, 117, 125));
             EstiloBoton(btnExportarCSV, Color.FromArgb(25, 135, 84)); 
-            EstiloBoton(btnExportarPDF, Color.FromArgb(192, 57, 43)); 
+            EstiloBoton(btnExportarPDF, Color.FromArgb(192, 57, 43));
+            CargarCitas();
 
-       
         }
 
 
@@ -141,6 +142,20 @@ namespace Colsultorio_Dental
             agregar.ShowDialog();
 
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ActualizarCitas actuliza = new ActualizarCitas();
+            actuliza.StartPosition = FormStartPosition.CenterScreen;
+            actuliza.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarCitas elimina = new EliminarCitas();
+            elimina.StartPosition = FormStartPosition.CenterScreen;
+            elimina.ShowDialog();
         }
     }
     

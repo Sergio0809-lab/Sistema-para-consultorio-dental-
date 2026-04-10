@@ -205,6 +205,9 @@
     <Compile Include="UC_Pacientes.Designer.cs">
       <DependentUpon>UC_Pacientes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Actualizar\ActualizarCitas.resx">
+      <DependentUpon>ActualizarCitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Actualizar\ActualizarDentistas.resx">
       <DependentUpon>ActualizarDentistas.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar\AgregarPacientes.resx">
       <DependentUpon>AgregarPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar\EliminarCitas.resx">
+      <DependentUpon>EliminarCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar\EliminarDentistas.resx">
       <DependentUpon>EliminarDentistas.cs</DependentUpon>
