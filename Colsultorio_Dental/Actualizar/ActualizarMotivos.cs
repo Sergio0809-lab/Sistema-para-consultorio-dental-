@@ -24,7 +24,6 @@ namespace Colsultorio_Dental.Actualizar
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox1.Text))
@@ -39,8 +38,6 @@ namespace Colsultorio_Dental.Actualizar
                 return;
             }
 
-
-
             int motivoid = Convert.ToInt32(textBox1.Text);
 
             Motivo motivo  = _context.Motivos.FirstOrDefault(q => q.MotivoID.Equals(motivoid));
@@ -49,13 +46,8 @@ namespace Colsultorio_Dental.Actualizar
                 MessageBox.Show("El motivo no  existe.");
                 return;
             }
-
-
            
             motivo.Descripcion = textBox2.Text;
-           
-
-
             int rowsAffected = _context.SaveChanges();
             if (rowsAffected > 0)
             {
@@ -65,19 +57,6 @@ namespace Colsultorio_Dental.Actualizar
 
         private void ActualizarMotivos_Load(object sender, EventArgs e)
         {
-            //dataGridView1.Dock = DockStyle.Fill;
-            //dataGridView1.BackgroundColor = Color.White;
-            //dataGridView1.BorderStyle = BorderStyle.None;
-
-            //dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
-            //dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
-
-            //dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 102, 153);
-            //dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            //dataGridView1.EnableHeadersVisualStyles = false;
-
-
             textBox1.KeyPress += SoloNumeros;
             EstiloBoton(btnActualizarMotivos, Color.FromArgb(0, 123, 255));
 
@@ -85,12 +64,7 @@ namespace Colsultorio_Dental.Actualizar
 
             var listaMotivos = _context.Motivos.ToList();
 
-            //dataGridView1.DataSource = listaMotivos;
-
-
         }
-
-
 
         private void EstiloBoton(Button btn, Color color)
         {

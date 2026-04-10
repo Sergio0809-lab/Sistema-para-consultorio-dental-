@@ -46,8 +46,6 @@ namespace Colsultorio_Dental.Actualizar
                 return;
             }
 
-          
-
             int pacienteid = Convert.ToInt32(textBox2.Text);
 
             Paciente paciente = _context.Pacientes.FirstOrDefault(q => q.PacienteID.Equals(pacienteid));
@@ -60,20 +58,13 @@ namespace Colsultorio_Dental.Actualizar
             paciente.NombreCompleto = textBox1.Text;
             paciente.Telefono = maskedTextBox1.Text;
             
-
-
             int rowsAffected = _context.SaveChanges();
             if (rowsAffected > 0)
             {
                 MessageBox.Show("Se ha actualizado el paciente en la base de datos.");
             }
 
-
-
-
-
         }
-
 
         private void SoloNumeros(object sender, KeyPressEventArgs e)
         {

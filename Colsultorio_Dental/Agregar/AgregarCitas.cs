@@ -25,9 +25,6 @@ namespace Colsultorio_Dental.Agregar
         {
 
         }
-
-
-
         public void cargarCmbCategorias()
         {
 
