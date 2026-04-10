@@ -78,7 +78,7 @@ namespace Colsultorio_Dental.Actualizar
             //dataGridView1.EnableHeadersVisualStyles = false;
 
 
-            
+            textBox1.KeyPress += SoloNumeros;
             EstiloBoton(btnActualizarMotivos, Color.FromArgb(0, 123, 255));
 
             _context = new ConsultorioDentalDBEntities();
@@ -100,6 +100,16 @@ namespace Colsultorio_Dental.Actualizar
             btn.FlatAppearance.BorderSize = 0;
             btn.Height = 35;
             btn.Cursor = Cursors.Hand;
+        }
+
+
+
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 

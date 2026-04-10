@@ -68,5 +68,19 @@ namespace Colsultorio_Dental.Actualizar
                 MessageBox.Show("Se ha actualizado el motivo en la base de datos.");
             }
         }
+
+
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ActualizarDentistas_Load(object sender, EventArgs e)
+        {
+            textBox3.KeyPress += SoloNumeros;
+        }
     }
 }

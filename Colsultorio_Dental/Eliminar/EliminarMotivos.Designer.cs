@@ -81,6 +81,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "EliminarMotivos";
             this.Text = "EliminarMotivos";
+            this.Load += new System.EventHandler(this.EliminarMotivos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -67,6 +67,30 @@ namespace Colsultorio_Dental.Actualizar
             {
                 MessageBox.Show("Se ha actualizado el paciente en la base de datos.");
             }
+
+
+
+
+
+        }
+
+
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ActualizarPacientes_Load(object sender, EventArgs e)
+        {
+            textBox2.KeyPress += SoloNumeros;
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

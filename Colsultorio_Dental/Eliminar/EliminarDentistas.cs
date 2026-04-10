@@ -44,5 +44,18 @@ namespace Colsultorio_Dental.Eliminar
                 MessageBox.Show("Se ha eliminado el dentista en la base de datos.");
             }
         }
+
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void EliminarDentistas_Load(object sender, EventArgs e)
+        {
+            textBox2.KeyPress += SoloNumeros;
+        }
     }
 }

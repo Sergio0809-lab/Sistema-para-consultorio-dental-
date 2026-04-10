@@ -88,6 +88,7 @@ namespace Colsultorio_Dental.Actualizar
         private void ActualizarCitas_Load(object sender, EventArgs e)
         {
             cargarCmbCategorias();
+            textBox1.KeyPress += SoloNumeros;
         }
 
 
@@ -135,6 +136,12 @@ namespace Colsultorio_Dental.Actualizar
             comboBox4.SelectedIndex = -1;
         }
 
-
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

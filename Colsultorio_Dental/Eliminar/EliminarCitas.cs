@@ -51,5 +51,17 @@ namespace Colsultorio_Dental.Eliminar
 
         }
 
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void EliminarCitas_Load(object sender, EventArgs e)
+        {
+            textBox1.KeyPress += SoloNumeros;
+        }
     }
 }

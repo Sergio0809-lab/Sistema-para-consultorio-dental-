@@ -82,6 +82,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "EliminarDentistas";
             this.Text = "EliminarDentistas";
+            this.Load += new System.EventHandler(this.EliminarDentistas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
